@@ -205,6 +205,10 @@
             this.lineShape1.X2 = 370;
             this.lineShape1.Y1 = 35;
             this.lineShape1.Y2 = 370;
+            //
+            // Elevator
+            //
+            //this.elevator = new Elevator();
             // 
             // Form1
             // 
@@ -223,6 +227,7 @@
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.shapeContainer1);
+            //this.Controls.Add(this.elevator);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "AIHM Elevator";
@@ -249,6 +254,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        //private Elevator elevator;
     }
 }
 
