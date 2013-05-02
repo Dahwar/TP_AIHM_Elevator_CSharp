@@ -34,8 +34,12 @@ namespace TP_AIHM_Elevator
 
             this.timerElevator = new Timer();
             this.timerElevator.Interval = 10;
-            this.timerElevator.Tick += new EventHandler(this.TimerEvent);
+            this.timerElevator.Tick += new EventHandler(this.TimerEventElevator);
             this.timerElevator.Start();
+
+            this.timerPause = new Timer();
+            this.timerPause.Interval = 500;
+            this.timerPause.Tick += new EventHandler(this.TimerEventPause);
         }
 
         private void AddDraw(object sender, PaintEventArgs e)
@@ -63,7 +67,7 @@ namespace TP_AIHM_Elevator
             }
         }
 
-        private void TimerEvent(Object sender, EventArgs e)
+        private void TimerEventElevator(Object sender, EventArgs e)
         {
             switch(this.currentMove){
 				case CabinMoves.STAY:
@@ -101,8 +105,8 @@ namespace TP_AIHM_Elevator
 					if(this.listFloor.First.Value==currentPosition){
 						currentMove = CabinMoves.STAY;
 						//HMButtons.get(currentPosition).setSelected(false);
-						//this.timerElevator.Stop();
-						//this.timerPause.Start();
+						this.timerElevator.Stop();
+						this.timerPause.Start();
                         this.listFloor.RemoveFirst();
 					}
 					break;
@@ -126,14 +130,19 @@ namespace TP_AIHM_Elevator
 					if(this.listFloor.First.Value==currentPosition){
 						currentMove = CabinMoves.STAY;
 						//HMButtons.get(currentPosition).setSelected(false);
-						//timer.stop();
-						//timerPause.start();
+                        this.timerElevator.Stop();
+                        this.timerPause.Start();
                         this.listFloor.RemoveFirst();
 					}
 					break;
 			}
-            //Console.Write(coef);
             this.Invalidate();
+        }
+
+        private void TimerEventPause(Object sender, EventArgs e)
+        {
+            timerPause.Stop();
+            timerElevator.Start();
         }
     }
 }
