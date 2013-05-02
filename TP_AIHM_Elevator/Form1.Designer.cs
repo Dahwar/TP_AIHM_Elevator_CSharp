@@ -79,6 +79,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("checkBox1.BackgroundImage")));
             this.checkBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.checkBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBox1.Location = new System.Drawing.Point(250, 135);
             this.checkBox1.MaximumSize = new System.Drawing.Size(40, 40);
             this.checkBox1.MinimumSize = new System.Drawing.Size(40, 40);
@@ -94,6 +95,7 @@
             this.checkBox2.AutoSize = true;
             this.checkBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("checkBox2.BackgroundImage")));
             this.checkBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.checkBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBox2.Location = new System.Drawing.Point(250, 285);
             this.checkBox2.MaximumSize = new System.Drawing.Size(40, 40);
             this.checkBox2.MinimumSize = new System.Drawing.Size(40, 40);
@@ -109,6 +111,7 @@
             this.checkBox3.AutoSize = true;
             this.checkBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("checkBox3.BackgroundImage")));
             this.checkBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.checkBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBox3.Location = new System.Drawing.Point(250, 435);
             this.checkBox3.MaximumSize = new System.Drawing.Size(40, 40);
             this.checkBox3.MinimumSize = new System.Drawing.Size(40, 40);
@@ -124,6 +127,7 @@
             this.checkBox4.AutoSize = true;
             this.checkBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("checkBox4.BackgroundImage")));
             this.checkBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.checkBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBox4.Location = new System.Drawing.Point(472, 202);
             this.checkBox4.MaximumSize = new System.Drawing.Size(40, 40);
             this.checkBox4.MinimumSize = new System.Drawing.Size(40, 40);
@@ -139,6 +143,7 @@
             this.checkBox5.AutoSize = true;
             this.checkBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("checkBox5.BackgroundImage")));
             this.checkBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.checkBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBox5.Location = new System.Drawing.Point(472, 156);
             this.checkBox5.MaximumSize = new System.Drawing.Size(40, 40);
             this.checkBox5.MinimumSize = new System.Drawing.Size(40, 40);
@@ -154,6 +159,7 @@
             this.checkBox6.AutoSize = true;
             this.checkBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("checkBox6.BackgroundImage")));
             this.checkBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.checkBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBox6.Location = new System.Drawing.Point(472, 110);
             this.checkBox6.MaximumSize = new System.Drawing.Size(40, 40);
             this.checkBox6.MinimumSize = new System.Drawing.Size(40, 40);
@@ -185,10 +191,13 @@
             // 
             // textBox1
             // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox1.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.Red;
             this.textBox1.Location = new System.Drawing.Point(472, 75);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(44, 20);
+            this.textBox1.Size = new System.Drawing.Size(44, 27);
             this.textBox1.TabIndex = 12;
             this.textBox1.Text = "0";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
