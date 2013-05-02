@@ -54,7 +54,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(605, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -79,13 +79,14 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("checkBox1.BackgroundImage")));
             this.checkBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.checkBox1.Location = new System.Drawing.Point(225, 110);
+            this.checkBox1.Location = new System.Drawing.Point(250, 135);
             this.checkBox1.MaximumSize = new System.Drawing.Size(40, 40);
             this.checkBox1.MinimumSize = new System.Drawing.Size(40, 40);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(40, 40);
             this.checkBox1.TabIndex = 4;
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // checkBox2
             // 
@@ -93,13 +94,14 @@
             this.checkBox2.AutoSize = true;
             this.checkBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("checkBox2.BackgroundImage")));
             this.checkBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.checkBox2.Location = new System.Drawing.Point(225, 210);
+            this.checkBox2.Location = new System.Drawing.Point(250, 285);
             this.checkBox2.MaximumSize = new System.Drawing.Size(40, 40);
             this.checkBox2.MinimumSize = new System.Drawing.Size(40, 40);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(40, 40);
             this.checkBox2.TabIndex = 5;
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // checkBox3
             // 
@@ -107,13 +109,14 @@
             this.checkBox3.AutoSize = true;
             this.checkBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("checkBox3.BackgroundImage")));
             this.checkBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.checkBox3.Location = new System.Drawing.Point(225, 310);
+            this.checkBox3.Location = new System.Drawing.Point(250, 435);
             this.checkBox3.MaximumSize = new System.Drawing.Size(40, 40);
             this.checkBox3.MinimumSize = new System.Drawing.Size(40, 40);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(40, 40);
             this.checkBox3.TabIndex = 6;
             this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // checkBox4
             // 
@@ -194,7 +197,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(605, 383);
+            this.shapeContainer1.Size = new System.Drawing.Size(784, 562);
             this.shapeContainer1.TabIndex = 13;
             this.shapeContainer1.TabStop = false;
             // 
@@ -203,19 +206,15 @@
             this.lineShape1.Name = "lineShape1";
             this.lineShape1.X1 = 370;
             this.lineShape1.X2 = 370;
-            this.lineShape1.Y1 = 35;
-            this.lineShape1.Y2 = 370;
-            //
-            // Elevator
-            //
-            //this.elevator = new Elevator();
+            this.lineShape1.Y1 = 45;
+            this.lineShape1.Y2 = 538;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(605, 383);
+            this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -227,7 +226,6 @@
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.shapeContainer1);
-            //this.Controls.Add(this.elevator);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "AIHM Elevator";
@@ -254,7 +252,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
-        //private Elevator elevator;
     }
 }
 
