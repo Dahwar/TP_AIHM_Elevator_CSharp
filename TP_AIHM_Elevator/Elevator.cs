@@ -10,6 +10,8 @@ namespace TP_AIHM_Elevator
     public class Elevator : Control
     {
         private LinkedList<int> listFloor = new LinkedList<int>();
+        Dictionary<int, CheckBox> listButton;
+        CheckBox recupButton;
 
         private Timer timerElevator;
         private Timer timerPause;
@@ -22,10 +24,7 @@ namespace TP_AIHM_Elevator
 
         Pen grayPen = new Pen(Color.Gray, 2);
         Pen blackPen = new Pen(Color.Black, 1);
-        SolidBrush gray = new SolidBrush(Color.Gray);
-
-        Dictionary<int, CheckBox> listButton;
-        CheckBox recupButton;
+        SolidBrush gray = new SolidBrush(Color.Orange);
 
         public Elevator(Dictionary<int, CheckBox> listButton)
         {

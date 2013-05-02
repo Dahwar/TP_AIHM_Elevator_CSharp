@@ -72,6 +72,21 @@ namespace TP_AIHM_Elevator
             this.timerCheckBox3.Start();
         }
 
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            this.elevator.AddFloorToList(0);
+        }
+
+        private void checkBox5_CheckedChanged(object sender, EventArgs e)
+        {
+            this.elevator.AddFloorToList(1);
+        }
+
+        private void checkBox6_CheckedChanged(object sender, EventArgs e)
+        {
+            this.elevator.AddFloorToList(2);
+        }
+
         private void TimerCheckBox1(Object sender, EventArgs e)
         {
             this.timerCheckBox1.Stop();
@@ -88,21 +103,6 @@ namespace TP_AIHM_Elevator
         {
             this.timerCheckBox3.Stop();
             checkBox3.Checked = false;
-        }
-
-        private void checkBox6_CheckedChanged(object sender, EventArgs e)
-        {
-            this.elevator.AddFloorToList(2);
-        }
-
-        private void checkBox5_CheckedChanged(object sender, EventArgs e)
-        {
-            this.elevator.AddFloorToList(1);
-        }
-
-        private void checkBox4_CheckedChanged(object sender, EventArgs e)
-        {
-            this.elevator.AddFloorToList(0);
         }
 
         private void TimerTextBox(object sender, EventArgs e)
