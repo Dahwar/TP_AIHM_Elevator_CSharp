@@ -96,15 +96,12 @@ namespace TP_AIHM_Elevator
 					coef-=5;
 					if(coef==0){
 						currentPosition=2;
-						//myWindow.setCabinLevel(currentPosition);
 					}
 					else if(coef==500){
 						currentPosition=1;
-						//myWindow.setCabinLevel(currentPosition);
 					}
 					else if(coef==1000){
 						currentPosition=0;
-						//myWindow.setCabinLevel(currentPosition);
 					}
 					else;
 						
@@ -121,19 +118,19 @@ namespace TP_AIHM_Elevator
 						
 				case CabinMoves.DOWN:
 					coef+=5;
-					if(coef==0){
-						currentPosition=2;
-						//myWindow.setCabinLevel(currentPosition);
-					}
-					else if(coef==500){
-						currentPosition=1;
-						//myWindow.setCabinLevel(currentPosition);
-					}
-					else if(coef==1000){
-						currentPosition=0;
-						//myWindow.setCabinLevel(currentPosition);
-					}
-					else;
+                    if (coef == 0)
+                    {
+                        currentPosition = 2;
+                    }
+                    else if (coef == 500)
+                    {
+                        currentPosition = 1;
+                    }
+                    else if (coef == 1000)
+                    {
+                        currentPosition = 0;
+                    }
+                    else;
 						
 					if(this.listFloor.First.Value==currentPosition){
 						currentMove = CabinMoves.STAY;
@@ -153,6 +150,11 @@ namespace TP_AIHM_Elevator
         {
             timerPause.Stop();
             timerElevator.Start();
+        }
+
+        public int getCurrentFloor()
+        {
+            return this.currentPosition;
         }
     }
 }

@@ -15,6 +15,7 @@ namespace TP_AIHM_Elevator
         Timer timerCheckBox1;
         Timer timerCheckBox2;
         Timer timerCheckBox3;
+        Timer timerTextBox;
 
         Dictionary<int, CheckBox> listButton = new Dictionary<int, CheckBox>();
 
@@ -40,6 +41,11 @@ namespace TP_AIHM_Elevator
             this.timerCheckBox3 = new Timer();
             this.timerCheckBox3.Interval = 750;
             this.timerCheckBox3.Tick += new EventHandler(this.TimerCheckBox3);
+
+            this.timerTextBox = new Timer();
+            this.timerTextBox.Interval = 50;
+            this.timerTextBox.Tick += new EventHandler(this.TimerTextBox);
+            this.timerTextBox.Start();
 
         }
 
@@ -97,6 +103,11 @@ namespace TP_AIHM_Elevator
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
             this.elevator.AddFloorToList(0);
+        }
+
+        private void TimerTextBox(object sender, EventArgs e)
+        {
+            this.textBox1.Text = this.elevator.getCurrentFloor().ToString();
         }
     }
 }
