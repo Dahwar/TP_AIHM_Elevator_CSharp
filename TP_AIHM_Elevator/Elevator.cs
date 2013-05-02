@@ -24,10 +24,12 @@ namespace TP_AIHM_Elevator
         Pen blackPen = new Pen(Color.Black, 1);
         SolidBrush gray = new SolidBrush(Color.Gray);
 
-    
+        Dictionary<int, CheckBox> listButton;
+        CheckBox recupButton;
 
-        public Elevator()
+        public Elevator(Dictionary<int, CheckBox> listButton)
         {
+            this.listButton = listButton;
             this.Size = new Size(160, 540);
             this.Paint += new PaintEventHandler(AddDraw);
             this.DoubleBuffered = true;
@@ -62,7 +64,9 @@ namespace TP_AIHM_Elevator
                 if (!this.listFloor.Contains(floor))
                 {
                     this.listFloor.AddLast(floor);
-                    //HMButtons.get(floor).setSelected(true);
+                    this.listButton.TryGetValue(floor, out this.recupButton);
+                    this.recupButton.Checked = true;
+                    this.recupButton = null;
                 }
             }
         }
@@ -82,7 +86,9 @@ namespace TP_AIHM_Elevator
 						}
 						else
                             this.listFloor.RemoveFirst();
-							//HMButtons.get(currentPosition).setSelected(false);
+                            this.listButton.TryGetValue(this.currentPosition, out this.recupButton);
+                            this.recupButton.Checked = false;
+                            this.recupButton = null;
 					}
 					break;
 						
@@ -104,7 +110,9 @@ namespace TP_AIHM_Elevator
 						
 					if(this.listFloor.First.Value==currentPosition){
 						currentMove = CabinMoves.STAY;
-						//HMButtons.get(currentPosition).setSelected(false);
+                        this.listButton.TryGetValue(this.currentPosition, out this.recupButton);
+                        this.recupButton.Checked = false;
+                        this.recupButton = null;
 						this.timerElevator.Stop();
 						this.timerPause.Start();
                         this.listFloor.RemoveFirst();
@@ -129,7 +137,9 @@ namespace TP_AIHM_Elevator
 						
 					if(this.listFloor.First.Value==currentPosition){
 						currentMove = CabinMoves.STAY;
-						//HMButtons.get(currentPosition).setSelected(false);
+                        this.listButton.TryGetValue(this.currentPosition, out this.recupButton);
+                        this.recupButton.Checked = false;
+                        this.recupButton = null;
                         this.timerElevator.Stop();
                         this.timerPause.Start();
                         this.listFloor.RemoveFirst();
