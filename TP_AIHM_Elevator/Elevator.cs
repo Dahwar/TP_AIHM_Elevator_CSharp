@@ -21,6 +21,7 @@ namespace TP_AIHM_Elevator
         private int currentPosition = 0;
 
         private int coef = 1000;
+        private int doorSizeX = 48;
 
         Pen grayPen = new Pen(Color.Gray, 2);
         Pen blackPen = new Pen(Color.Black, 1);
@@ -52,8 +53,8 @@ namespace TP_AIHM_Elevator
             g.DrawLine(this.blackPen, 50, 80, 50, 529);
             g.DrawLine(this.blackPen, 150, 80, 150, 529);
 
-            g.FillRectangle(this.gray, 52, (int)positionY+80, 48, 150);
-            g.FillRectangle(this.gray, 101, (int)positionY+80, 48, 150);
+            g.FillRectangle(this.gray, 52, (int)positionY+80, this.doorSizeX, 150);
+            g.FillRectangle(this.gray, 101, (int)positionY + 80, this.doorSizeX, 150);
         }
 
         public void AddFloorToList(int floor)
@@ -147,8 +148,8 @@ namespace TP_AIHM_Elevator
 
         private void TimerEventPause(Object sender, EventArgs e)
         {
-            timerPause.Stop();
-            timerElevator.Start();
+            this.timerPause.Stop();
+            this.timerElevator.Start();
         }
 
         public int getCurrentFloor()
