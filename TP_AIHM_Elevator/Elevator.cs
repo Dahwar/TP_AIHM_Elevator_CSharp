@@ -5,6 +5,14 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 
+/**
+ *
+ * @author Florent LACROIX
+ * 
+ * This class permits to create and animate elevator and doors with 2 states machine. We use timers too.
+ * 
+ */
+
 namespace TP_AIHM_Elevator
 {
     public class Elevator : Control
@@ -39,6 +47,7 @@ namespace TP_AIHM_Elevator
             this.Paint += new PaintEventHandler(AddDraw);
             this.DoubleBuffered = true;
 
+            // Initialize Timers
             this.timerElevator = new Timer();
             this.timerElevator.Interval = 10;
             this.timerElevator.Tick += new EventHandler(this.TimerEventElevator);
@@ -53,6 +62,7 @@ namespace TP_AIHM_Elevator
             this.timerDoor.Tick += new EventHandler(this.TimerEventDoor);
         }
 
+        //Drawing the elevator
         private void AddDraw(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -68,6 +78,7 @@ namespace TP_AIHM_Elevator
 
         public void AddFloorToList(int floor)
         {
+            // Add a floor to the list of floor and light on the button
             if (floor >= 0 && floor <= 2)
             {
                 if (!this.listFloor.Contains(floor))
@@ -84,6 +95,7 @@ namespace TP_AIHM_Elevator
         {
             if (this.currentDoorState == CabinDoorState.CLOSE)
             {
+                // State machine for the elevator
                 switch (this.currentMove)
                 {
                     case CabinMoves.STAY:
@@ -99,7 +111,9 @@ namespace TP_AIHM_Elevator
                                     this.listFloor.RemoveFirst();
                             }
                             else
+                            {
                                 this.listFloor.RemoveFirst();
+                            }
                             this.listButton.TryGetValue(this.currentPosition, out this.recupButton);
                             this.recupButton.Checked = false;
                             this.recupButton = null;
@@ -170,6 +184,7 @@ namespace TP_AIHM_Elevator
 
         private void TimerEventDoor(Object sender, EventArgs e)
         {
+            // State machine for the doors of the elevator
             switch (this.currentDoorState)
             {
                 case CabinDoorState.CLOSE:
@@ -207,6 +222,7 @@ namespace TP_AIHM_Elevator
 
         private void TimerEventPause(Object sender, EventArgs e)
         {
+            // Pause
             this.timerPause.Stop();
             this.timerDoor.Start();
         }

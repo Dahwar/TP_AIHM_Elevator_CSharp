@@ -9,6 +9,16 @@ using System.Windows.Forms;
 
 namespace TP_AIHM_Elevator
 {
+
+/**
+ * 
+ * @author Florent LACROIX
+ * 
+ * This class permits to create and animate elevator and doors with 2 states machine. We use timers too.
+ * 
+ */
+
+    //Launch the diffents events from the buttons and others
     public partial class Form1 : Form
     {
         private Elevator elevator;
